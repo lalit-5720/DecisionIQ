@@ -1,0 +1,5 @@
+Detector,Precision,Recall,F1,TP,FP,FN
+IsolationForest,0.0726,0.105,0.0858,99,1265,844
+Autoencoder,0.4817,0.6967,0.5696,657,707,286
+ZScore,0.2999,0.7773,0.4328,733,1711,210
+Ensemble,0.6673,0.702,0.6842,662,330,281

@@ -1,0 +1,14 @@
+.git
+.claude
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+backend/.venv
+backend/*.db
+frontend/node_modules
+frontend/dist
+data
+docs
+decisioniq.db
+*.md
+!backend/requirements*.txt

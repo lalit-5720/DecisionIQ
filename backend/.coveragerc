@@ -1,0 +1,4 @@
+[run]
+omit =
+    app/evaluation/*
+    app/forecasting/lstm_worker.py

@@ -1,0 +1,28 @@
+{
+ "forecasting": {
+  "serving": "XGBoost",
+  "full_mape": 13.033157566574353,
+  "full_wape": 11.372262402197306,
+  "chain_mape": 3.551703489808239,
+  "r2": 0.9177452208062159,
+  "best_naive_mape": 24.537618431675064,
+  "improvement_vs_naive_pct": 46.88499373781874
+ },
+ "anomaly": {
+  "ensemble_precision": 0.6673,
+  "ensemble_recall": 0.702,
+  "ensemble_f1": 0.6842,
+  "best_param": "z-score threshold",
+  "best_value": "4.0",
+  "best_f1": 0.7103
+ },
+ "performance": {
+  "forecast_90d_s": 0.447356199962087,
+  "scan_s": 24.4
+ },
+ "tests": {
+  "passed_line": "79 passed in 75.69s (0:01:15)",
+  "coverage_pct": 91.35416666666667
+ },
+ "model_version": "xgboost-202610262117"
+}

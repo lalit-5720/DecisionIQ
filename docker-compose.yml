@@ -1,0 +1,46 @@
+# One command demo:   docker compose up --build      then open http://localhost:8080
+#
+# Needs data/raw/train.csv (Kaggle "Store Item Demand Forecasting Challenge") on the host - it is not redistributed.
+# The `bootstrap` service builds everything from it (synthetic data, features, models, scan, recommendations, demo users).
+# That takes a few minutes the first time; later starts skip finished steps. Everything lives in ./data (bind mount).
+#
+# The database is SQLite (./data/decisioniq.db). A MySQL URL can be given via DIQ_DATABASE_URL (pymysql is installed)
+# but that path has not been tested.
+
+services:
+  bootstrap:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    image: decisioniq-backend:latest
+    command: ["python", "-m", "app.bootstrap"]
+    volumes:
+      - ./data:/srv/data
+    environment: &env
+      DIQ_JWT_SECRET: ${DIQ_JWT_SECRET:-}            # empty = generated once into ./data/.jwt_secret
+      DIQ_DEMO_PASSWORD: ${DIQ_DEMO_PASSWORD:-DecisionIQ@2026}
+      DIQ_DEMO_MODE: ${DIQ_DEMO_MODE:-true}
+    restart: "no"
+
+  api:
+    image: decisioniq-backend:latest
+    depends_on:
+      bootstrap:
+        condition: service_completed_successfully
+    volumes:
+      - ./data:/srv/data
+    environment: *env
+    ports:
+      - "8000:8000"        # API + interactive docs at /docs
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    restart: unless-stopped

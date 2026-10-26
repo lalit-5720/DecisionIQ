@@ -1,0 +1,10 @@
+Parameter,Value,Precision,Recall,F1,Rows flagged,Seconds
+sensitivity (share of rows flagged by ML detectors),0.05%,0.866,0.4454,0.5882,485,22.4
+sensitivity (share of rows flagged by ML detectors),0.10%,0.7605,0.6363,0.6928,789,20.4
+sensitivity (share of rows flagged by ML detectors),0.15%,0.6673,0.702,0.6842,992,21.1
+sensitivity (share of rows flagged by ML detectors),0.25%,0.5561,0.72,0.6275,1221,19.2
+sensitivity (share of rows flagged by ML detectors),0.40%,0.4122,0.7317,0.5273,1674,23.3
+z-score threshold,2.5,0.5732,0.702,0.6311,1155,24.4
+z-score threshold,3.0,0.6673,0.702,0.6842,992,22.8
+z-score threshold,3.5,0.7172,0.6967,0.7068,916,21.5
+z-score threshold,4.0,0.7315,0.6903,0.7103,890,21.5

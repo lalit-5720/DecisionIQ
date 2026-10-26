@@ -1,0 +1,10 @@
+Operation,Runs,Median s,p95 s
+"Data cleaning, 913,000 rows (dedupe, gaps, IQR capping)",1,2.3188651999807917,2.3188651999807917
+"Feature engineering, 913,000 rows (12 features)",1,0.9656083000008948,0.9656083000008948
+"90-day recursive forecast, 500 series (XGBoost)",3,0.447356199962087,0.5453915799909737
+GET /api/dashboard/summary,10,0.038652350020129234,0.04297446999698877
+"GET /api/forecast/series (all stores, 30 days)",10,0.060029949992895126,0.12940586000622706
+GET /api/risk/alerts (page of 8),10,0.013891150010749698,0.01910769999376498
+GET /api/recommendations,10,0.015041850012494251,0.020277624993468635
+GET /api/explain/local (one series-day),10,0.11663190001854673,0.15710049999761394
+"POST /api/simulate/run (all series, 250 runs)",5,0.5483968000044115,0.6087210400379263

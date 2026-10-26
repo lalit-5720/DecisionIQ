@@ -1,0 +1,12 @@
+Test file,Tests
+tests/test_auth.py,15
+tests/test_platform.py,10
+tests/test_pipeline.py,8
+tests/test_simulate.py,8
+tests/test_forecasting.py,7
+tests/test_recommend.py,7
+tests/test_explain.py,7
+tests/test_bootstrap.py,6
+tests/test_dataset.py,4
+tests/test_risk.py,4
+tests/test_health.py,2

@@ -1,0 +1,7 @@
+Job,Duration s
+"Risk scan over 913,000 billed rows (detect + alert ledger)",24.4
+Full model training and benchmark (4 models + refit + forecast),126.7
+"  training time, XGBoost",6.8
+"  training time, Prophet",7.4
+"  training time, SARIMA",7.7
+"  training time, LSTM",77.8
